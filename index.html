@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOT</title>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+<div id="status"></div>
+<form onsubmit="addExtraPoints(); return false;">
+    <input type="text" id="extraPoints">
+</form>
+<div id="likesCount"></div>
+
+
+<br>
+<br>
+<div id="stream">
+    
+</div>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="facebook.js"></script>
+</body>
+</html>
