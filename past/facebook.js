@@ -1,6 +1,4 @@
-var ExtraPoints = 0,
-    Percentage = 0
-;
+var ExtraPoints = 0;
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -73,19 +71,8 @@ function callReactios(){
         function (response) {
             console.log(response, ExtraPoints);
             if (response && !response.error) {
-                Percentage = parseInt((response.like.summary.total_count + ExtraPoints)/1000);
-                $("#likesCount").html('Likes <strong>'+ (response.like.summary.total_count + ExtraPoints) +'</strong>, %: <strong>'+ Percentage +'</strong>')
-                animatePrice(Percentage);
-                $("#barHeight").css({
-                    'height': ( (response.like.summary.total_count + ExtraPoints)/100 ) + '%'
-                })
+                $("#likesCount").html('Likes <strong>'+ (response.like.summary.total_count + ExtraPoints) +'</strong>')
             }
         }
     );
-}
-function animatePrice(index){
-    console.log("wololo");
-    $("body #stream #actual_price span").css({
-        'transform': 'translateY(-'+ index * 253 +'px)'
-    })
 }
